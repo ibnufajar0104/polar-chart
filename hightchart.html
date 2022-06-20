@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <title>Document</title>
+
+    <style></style>
+  </head>
+
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    Highcharts.chart('container', {
+      chart: {
+        polar: true,
+      },
+
+      title: {
+        text: 'Highcharts Polar Chart',
+      },
+
+      subtitle: {
+        text: 'Also known as Radar Chart',
+      },
+
+      pane: {
+        startAngle: 0,
+        endAngle: 360,
+      },
+
+      xAxis: {
+        tickInterval: 45,
+        min: 0,
+        max: 360,
+        labels: {
+          format: '{value}°',
+        },
+      },
+
+      yAxis: {
+        min: 0,
+        tickInterval: 1,
+      },
+
+      plotOptions: {
+        // series: {
+        //   pointStart: 0,
+        //   pointInterval: 45,
+        // },
+        // column: {
+        //   pointPadding: 0,
+        //   groupPadding: 0,
+        // },
+        // dataLabels: {
+        //   enabled: false,
+        // },
+
+        scatter: {
+          dataLabels: {
+            enabled: true,
+          },
+          enableMouseTracking: false,
+        },
+      },
+
+      series: [
+        {
+          type: 'scatter',
+          name: 'Variabel 1',
+          color: '#00FF00',
+
+          data: [[45, 8]],
+          // data: [
+          //   { x: 45, y: 8, segmentColor: 'blue' },
+          //   { x: 315, y: 17, segmentColor: '#0066FF' },
+          // ],
+          // data: [
+          //   {
+          //     x: 45,
+          //     y: 9,
+          //     name: 'Variabel 1',
+          //     // color: '#00FF00',
+          //   },
+          // {
+          //   x: 315,
+          //   y: 24,
+          //   name: 'Point1',
+          //   color: '#FF00FF',
+          // },
+          // {
+          //   x: 180,
+          //   y: 30,
+          //   name: 'Point1',
+          //   color: '#FF00FF',
+          // },
+          // ],
+        },
+        {
+          type: 'scatter',
+          name: 'Variabel 2',
+          color: '#5749AD',
+
+          data: [[315, 19]],
+        },
+      ],
+    });
+
+    // var thischart = $('#container').highcharts();
+
+    // if (thischart.yAxis[0].getExtremes().dataMax === 0) {
+    //   thischart.yAxis[0].setExtremes(0, 10);
+    // }
+  </script>
+</html>
